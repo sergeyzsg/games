@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  br
+  video(id='localVideo', autoplay=true)
+  script.
+    var v = document.getElementById('localVideo');
+    navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia;
+    navigator.getUserMedia({video: true, audio: true}, success, function() {});
+    function success(stream) {
+      v.src = window.URL.createObjectURL(stream);
+    }

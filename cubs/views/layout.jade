@@ -2,7 +2,37 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    link(rel='stylesheet', href='/static/css/bootstrap.css')
+    link(rel='stylesheet', href='/static/css/bootstrap-theme.css')
+    link(rel='stylesheet', href='/static/css/style.css')
+
+    script(src='/static/js/jquery-2.0.3.js')
+    script(src='/static/js/bootstrap.js')
+    script(src='/static/js/simplewebrtc.js')
+
     block head
   body
-    block content
+    div(class='navbar navbar-inverse navbar-fixed-top', role='navigation')
+      div(class='container')
+        div(class='navbar-header')
+          button(type='button', class='navbar-toggle', data-toggle='collapse', data-target='.navbar-collapse')
+            span(class='sr-only') Toggle navigation
+            span(class='icon-bar')
+            span(class='icon-bar')
+            span(class='icon-bar')
+          a(class='navbar-brand' href='#') Project name
+
+        div(class='collapse navbar-collapse')
+          ul(class='nav navbar-nav')
+            li(class='active')
+              a(href='#') Home
+            li
+              a(href='#') About
+            li
+              a(href='#') Contact
+
+    div(class='container')
+      block content
+
+

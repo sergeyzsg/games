@@ -6,3 +6,23 @@ body {
 a {
   color: #00B7FF;
 }
+
+.cub {
+    text-align: center;
+    display: block;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    background: #ffffff;
+    line-height: 35px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid black;
+    margin-left: 15px;
+}
+
+.cub:first-child {
+    margin-left: 0;
+}

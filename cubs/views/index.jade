@@ -8,8 +8,8 @@ block content
 
   div(class='row')
     div(class='col-md-6')
-      div(class='well', id='score')
-        table(class='table table-striped table-bordered table-condensed')
+      div(class='well', id='game')
+        table(class='table table-striped table-bordered table-condensed', id='score')
           thead
             tr
               td №
@@ -21,6 +21,34 @@ block content
             tr <td>3</td><td>200</td><td>&mdash;</td>
 
     div(class='col-md-6')
-      div(class='well') sssss
-        video(id='localVideo', autoplay=true)
-        div(id='removeVideosEl')
+      div(class='well')
+          h3.text-center Видеосвязь
+          div.well.well-sm
+            video(id='localVideo', autoplay=true)
+            div(id='removeVideosEl')
+            | Видео будет позже
+            br
+
+          div(class='well well-sm')
+            button.btn.btn-default#add_player Добавить игрока
+
+          div(class='well well-sm')
+            h2 Ходит
+              span#player_name
+
+            div(class='well well-sm clearfix', id='cubs')
+              div#to_throw
+                div.cub.pull-left#cub_1 1
+                div.cub.pull-left#cub_2 1
+                div.cub.pull-left#cub_3 1
+                div.cub.pull-left#cub_4 1
+                div.cub.pull-left#cub_5 1
+
+            div(class='well well-sm clearfix', id='cubs')
+              div#thrown
+
+          div(class='well well-sm')
+            div.btn-group
+              button.btn.btn-default#throw_cubs Бросать
+              button.btn.btn-default#end_turn Закончить ход
+

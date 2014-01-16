@@ -26,3 +26,30 @@ function startWebRTC() {
 $(function() {
     //startWebRTC();
 });
+
+
+var game = {
+    players: [],
+
+    addPlayer: function(name) {
+        this.players.push(name);
+
+        var td = $('<td></td>');
+        td.text(name);
+
+        $('#score').find('tr').first().append(td);
+    }
+};
+
+$(function() {
+    $('#add_player').click(function() {
+        var name = $.trim(window.prompt('Введите имя игрока'));
+
+        if (!name) {
+            alert('Введите не пустое имя');
+            return;
+        }
+
+        game.addPlayer(name);
+    });
+});

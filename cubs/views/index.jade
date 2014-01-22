@@ -1,7 +1,8 @@
 extends layout
 
 block head
-  script(src='/static/js/main.js')
+  script.
+    require(['main']);
 
 block content
   h1 Кубики
@@ -49,6 +50,6 @@ block content
 
           div(class='well well-sm')
             div.btn-group
-              button.btn.btn-default#throw_cubs Бросать
+              button.btn.btn-default#throw_dice Бросать
               button.btn.btn-default#end_turn Закончить ход
 

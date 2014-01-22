@@ -1,55 +1,50 @@
-function startWebRTC() {
-    //var v = document.getElementById('localVideo');
-    //navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia;
-    //navigator.getUserMedia({video: true, audio: true}, success, function() {});
-    //function success(stream) {
-    //  v.src = window.URL.createObjectURL(stream);
-    //}
+define(['game', 'simplewebrtc'], function() {
+    var game = require('game');
+    var SimpleWebRTC = require('simplewebrtc');
 
-    var webrtc = new SimpleWebRTC({
-        // the id/element dom element that will hold "our" video
-        localVideoEl: 'localVideo',
-        // the id/element dom element that will hold remote videos
-        remoteVideosEl: 'remoteVideos',
-        // immediately ask for camera access
-        autoRequestMedia: true
-    });
-    webrtc.config.url = 'http://localhost:3000';
+    function startWebRTC() {
+        //var v = document.getElementById('localVideo');
+        //navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia;
+        //navigator.getUserMedia({video: true, audio: true}, success, function() {});
+        //function success(stream) {
+        //  v.src = window.URL.createObjectURL(stream);
+        //}
 
-    // we have to wait until it's ready
-    webrtc.on('readyToCall', function () {
-        // you can name it anything
-        webrtc.joinRoom('room');
-    });
-}
+        var webrtc = new SimpleWebRTC({
+            // the id/element dom element that will hold "our" video
+            localVideoEl: 'localVideo',
+            // the id/element dom element that will hold remote videos
+            remoteVideosEl: 'remoteVideos',
+            // immediately ask for camera access
+            autoRequestMedia: true
+        });
+        webrtc.config.url = 'http://localhost:3000';
 
-$(function() {
-    //startWebRTC();
-});
-
-
-var game = {
-    players: [],
-
-    addPlayer: function(name) {
-        this.players.push(name);
-
-        var td = $('<td></td>');
-        td.text(name);
-
-        $('#score').find('tr').first().append(td);
+        // we have to wait until it's ready
+        webrtc.on('readyToCall', function () {
+            // you can name it anything
+            webrtc.joinRoom('room');
+        });
     }
-};
 
-$(function() {
-    $('#add_player').click(function() {
-        var name = $.trim(window.prompt('Введите имя игрока'));
+    $(function() {
+        //startWebRTC();
+    });
 
-        if (!name) {
-            alert('Введите не пустое имя');
-            return;
-        }
+    $(function() {
+        $('#add_player').click(function() {
+            var name = $.trim(window.prompt('Введите имя игрока'));
 
-        game.addPlayer(name);
+            if (!name) {
+                alert('Введите не пустое имя');
+                return;
+            }
+
+            game.addPlayer(name);
+        });
+
+        $('#throw_dice').click(function() {
+            alert(game.throwDice(5));
+        });
     });
 });

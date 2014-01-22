@@ -7,9 +7,10 @@ html
     link(rel='stylesheet', href='/static/css/bootstrap-theme.css')
     link(rel='stylesheet', href='/static/css/style.css')
 
-    script(src='/static/js/jquery-2.0.3.js')
-    script(src='/static/js/bootstrap.js')
-    script(src='/static/js/simplewebrtc.js')
+    script(src='/static/js/lib/require-2.1.10.js')
+    script(src='/static/js/config.js')
+    script.
+      require(['bootstrap']);
 
     block head
   body

@@ -32,6 +32,8 @@ define(['game', 'simplewebrtc'], function() {
     });
 
     $(function() {
+        game.displayDices();
+
         $('#add_player').click(function() {
             var name = $.trim(window.prompt('Введите имя игрока'));
 
@@ -44,7 +46,8 @@ define(['game', 'simplewebrtc'], function() {
         });
 
         $('#throw_dice').click(function() {
-            alert(game.throwDice(5));
+            game.throwDices();
+            game.displayDices();
         });
     });
 });

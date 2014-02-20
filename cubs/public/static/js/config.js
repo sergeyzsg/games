@@ -6,7 +6,6 @@ require.config({
         underscore: 'lib/.bower/underscore/underscore'
     },
     shim: {
-        bootstrap: ['jquery'],
-        underscore: {exports: '_'}
+        bootstrap: ['jquery']
     }
 });

@@ -32,7 +32,11 @@ define(['game', 'simplewebrtc'], function() {
     });
 
     $(function() {
-        game.displayDices();
+        game.display();
+
+        $('#start_game').click(function() {
+            game.startGame();
+        });
 
         $('#add_player').click(function() {
             var name = $.trim(window.prompt('Введите имя игрока'));
@@ -47,7 +51,10 @@ define(['game', 'simplewebrtc'], function() {
 
         $('#throw_dice').click(function() {
             game.throwDices();
-            game.displayDices();
+        });
+
+        $('#end_move').click(function() {
+            game.endMove();
         });
     });
 });

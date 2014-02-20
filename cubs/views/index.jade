@@ -14,12 +14,7 @@ block content
           thead
             tr
               td №
-              td Игрок 1
-              td Игрок 2
           tbody
-            tr <td>1</td><td>&mdash;</td><td>35</td>
-            tr <td>2</td><td>95</td><td>50</td>
-            tr <td>3</td><td>200</td><td>&mdash;</td>
 
     div(class='col-md-6')
       div(class='well')
@@ -32,10 +27,17 @@ block content
 
           div(class='well well-sm')
             button.btn.btn-default#add_player Добавить игрока
+            //spacer
+            = ' '
+            button.btn.btn-default#start_game Начать игру
 
           div(class='well well-sm')
             h2 Ходит
+              = ': '
               span#player_name
+            h2 Выпало
+              = ': '
+              span#current_score
 
             div(class='well well-sm clearfix', id='cubs')
               div#table_dices
@@ -46,5 +48,5 @@ block content
           div(class='well well-sm')
             div.btn-group
               button.btn.btn-default#throw_dice Бросать
-              button.btn.btn-default#end_turn Закончить ход
+              button.btn.btn-default#end_move Закончить ход
 

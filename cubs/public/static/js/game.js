@@ -113,6 +113,10 @@ define(['jquery', 'underscore'], function() {
                 return;
             }
 
+            if (_.size(this.tableDices) === 0) {
+                this.moveDicesToTable(this.winningDices);
+            }
+
             var self = this;
             var values = this.genDices(_.size(this.tableDices));
 
@@ -179,16 +183,14 @@ define(['jquery', 'underscore'], function() {
                 this.state.tableState.throwFail = true;
             } else {
                 this.state.tableState.score += totalScore;
-
-                if (_.size(this.tableDices) === 0) {
-                    this.moveDicesToTable(this.winningDices);
-                }
             }
         },
 
         endMove: function() {
             var playerState = this.activePlayer.state;
             var nextIndex, nextPlayer;
+
+            this.state.tableState.canThrow = false;
 
             this.processAndWriteScore();
 
@@ -219,6 +221,7 @@ define(['jquery', 'underscore'], function() {
                         playerState.failCount++;
 
                         if (playerState.failCount === 3) {
+                            playerState.failCount = 0;
                             playerState.score -= 100;
                             write = playerState.score;
                         } else {
@@ -250,6 +253,7 @@ define(['jquery', 'underscore'], function() {
                         playerState.failCount++;
 
                         if (playerState.failCount === 3) {
+                            playerState.failCount = 0;
                             playerState.score -= 100;
                         } else {
                             write = '&mdash;';
@@ -278,6 +282,7 @@ define(['jquery', 'underscore'], function() {
                         ) {
                             playerState.score = playerState.score - 100 + playerState.barrelState.score;
                             playerState.code = 'entered';
+                            playerState.failCount = 0;
                             write = playerState.score;
                         } else {
                             write = '&mdash;';
@@ -295,6 +300,13 @@ define(['jquery', 'underscore'], function() {
                         if (write) {
                             break;
                         }
+                        write = playerState.score;
+                        break;
+                    }
+
+                    if (playerState.barrelState.throwCount === 3) {
+                        playerState.score = playerState.score - 100 + playerState.barrelState.score;
+                        playerState.code = 'entered';
                         write = playerState.score;
                         break;
                     }

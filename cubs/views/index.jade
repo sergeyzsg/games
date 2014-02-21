@@ -9,7 +9,7 @@ block content
 
   div(class='row')
     div(class='col-md-6')
-      div(class='well', id='game')
+      div.well.well-white#game
         table(class='table table-striped table-bordered table-condensed', id='score')
           thead
             tr
@@ -17,7 +17,7 @@ block content
           tbody
 
     div(class='col-md-6')
-      div(class='well')
+      div.well.well-white
           h3.text-center Видеосвязь
           div.well.well-sm
             video(id='localVideo', autoplay=true)
@@ -39,10 +39,10 @@ block content
               = ': '
               span#current_score
 
-            div(class='well well-sm clearfix', id='cubs')
+            div.well.well-sm.clearfix.cub-place
               div#table_dices
 
-            div(class='well well-sm clearfix', id='cubs')
+            div.well.well-sm.clearfix.cub-place
               div#winning_dices
 
           div(class='well well-sm')

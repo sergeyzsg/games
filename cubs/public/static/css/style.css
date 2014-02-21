@@ -26,3 +26,11 @@ a {
 .cub:first-child {
     margin-left: 0;
 }
+
+.cub-place {
+    height: calc(45px + 9px + 9px);
+}
+
+.well-white {
+    background: #ffffff;
+}

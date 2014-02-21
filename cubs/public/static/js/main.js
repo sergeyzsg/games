@@ -11,6 +11,7 @@ define(['game', 'simplewebrtc'], function() {
         //}
 
         var webrtc = new SimpleWebRTC({
+            url: 'http://vidgam.ru:3000',
             // the id/element dom element that will hold "our" video
             localVideoEl: 'localVideo',
             // the id/element dom element that will hold remote videos
@@ -18,7 +19,7 @@ define(['game', 'simplewebrtc'], function() {
             // immediately ask for camera access
             autoRequestMedia: true
         });
-        webrtc.config.url = 'http://localhost:3000';
+        webrtc.config.url = 'http://vidgam.ru:3000';
 
         // we have to wait until it's ready
         webrtc.on('readyToCall', function () {

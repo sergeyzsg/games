@@ -10,17 +10,38 @@ a {
 .cub {
     text-align: center;
     display: block;
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333333;
-    background: #ffffff;
-    line-height: 35px;
+    width: 47px;
+    height: 47px;
+    background: #a349a4;
     padding: 5px;
-    border-radius: 3px;
-    border: 1px solid black;
     margin-left: 15px;
+}
+
+.cub-1 {
+    background: url("../img/cubs.png") no-repeat 0 0;
+}
+
+.cub-2 {
+    background: url("../img/cubs.png") -47px;
+}
+
+.cub-3 {
+    background: url("../img/cubs.png") -94px;
+}
+
+.cub-4 {
+    width: 48px;
+    background: url("../img/cubs.png") -141px;
+}
+
+.cub-5 {
+    width: 48px;
+    background: url("../img/cubs.png") -189px;
+}
+
+.cub-6 {
+    width: 48px;
+    background: url("../img/cubs.png") -237px;
 }
 
 .cub:first-child {
@@ -28,7 +49,8 @@ a {
 }
 
 .cub-place {
-    height: calc(45px + 9px + 9px);
+    height: 63px;
+    background: #a349a4
 }
 
 .well-white {

@@ -133,13 +133,13 @@ define(['jquery', 'underscore'], function() {
             var tableDices = $('#table_dices');
             tableDices.html('');
             _.each(this.tableDices, function(dice) {
-                tableDices.append('<div class="cub pull-left" id="' + dice.id + '-dice">' + dice.value + '</div>');
+                tableDices.append('<div class="cub pull-left cub-' + dice.value + '" id="' + dice.id + '-dice"></div>');
             });
 
             var winningDices = $('#winning_dices');
             winningDices.html('');
             _.each(this.winningDices, function(dice) {
-                winningDices.append('<div class="cub pull-left" id="' + dice.id + '-dice">' + dice.value + '</div>');
+                winningDices.append('<div class="cub pull-left cub-' + dice.value + '" id="' + dice.id + '-dice"></div>');
             });
 
             if (this.activePlayer) {

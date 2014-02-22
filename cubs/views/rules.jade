@@ -1,0 +1,24 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/static/js/lib/.bower/highlightjs/styles/xcode.css')
+  script(src='/static/js/lib/.bower/highlightjs/highlight.pack.js')
+  script.
+    require(['main']);
+    hljs.initHighlightingOnLoad();
+
+block content
+  ul.nav.nav-tabs#myTab
+    li.active
+      a(data-toggle="tab", href="#result") Результат
+    li
+      a(data-toggle="tab", href="#source") Код HTML
+
+  div.tab-content#myTabContent
+    br
+    div.tab-pane.fade.active.in#result
+      != content
+
+    div.tab-pane.fade#source
+      pre
+        code= content

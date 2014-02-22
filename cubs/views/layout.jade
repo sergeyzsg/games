@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Игра кубики
+    title= title
 
     link(rel='stylesheet', href='/static/css/bootstrap.css')
     link(rel='stylesheet', href='/static/css/bootstrap-theme.css')
@@ -22,12 +22,12 @@ html
             span(class='icon-bar')
             span(class='icon-bar')
             span(class='icon-bar')
-          a(class='navbar-brand' href='#') Кубики
+          a(class='navbar-brand' href='/') Кубики
 
         div(class='collapse navbar-collapse')
           ul(class='nav navbar-nav')
             li
-              a(href='/static/html/rules.html') Правила
+              a(href='/rules') Правила
 
     div(class='container')
       block content

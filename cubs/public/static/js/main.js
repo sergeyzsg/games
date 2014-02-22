@@ -29,7 +29,7 @@ define(['game', 'simplewebrtc'], function() {
     }
 
     $(function() {
-        startWebRTC();
+        //startWebRTC();
     });
 
     $(function() {
